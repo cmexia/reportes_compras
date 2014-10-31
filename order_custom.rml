@@ -203,7 +203,7 @@
           <para style="terp_tblheader_General_Centre">Our Order Reference</para>
         </td>
         <td>
-          <para style="terp_tblheader_General_Centre">Your Order Reference</para>
+          <para style="terp_tblheader_General_Centre">Currency</para>
         </td>
         <td>
           <para style="terp_tblheader_General_Centre">Order Date</para>
@@ -219,7 +219,7 @@
           <para style="terp_default_Centre_8">[[ o.name or '' ]]</para>
         </td>
         <td>
-          <para style="terp_default_Centre_8">[[ o.partner_ref or '' ]]</para>
+          <para style="terp_default_Centre_8">[[ o.pricelist_id.currency_id.name or '']]</para>
         </td>
         <td>
           <para style="terp_default_Centre_8">[[formatLang(o.date_order,date=True) ]]</para>
