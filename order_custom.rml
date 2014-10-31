@@ -168,6 +168,7 @@
           <para style="P8">
             <font color="white"> </font>
           </para>
+          <para style="P4">[[ o.company_id.vat ]]</para>
           <para style="P4">[[ o.company_id.name ]]</para>
           <para style="P4">[[ o.company_id.street ]]</para>
           <para style="P4">[[ o.company_id.city ]] </para>
