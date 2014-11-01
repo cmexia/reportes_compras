@@ -278,7 +278,7 @@
             <para style="P6">[[ line.name ]]</para>
           </td>
           <td>
-            <para style="P20">[[ '% .f' %line.product_qty ) ]] [[ line.product_uom.name ]] </para>
+            <para style="P20">[['%.f' % line.product_qty]] [[ line.product_uom.name ]] </para>
           </td>
           <td>
             <para style="P13">[[ o.pricelist_id.name ]][[ o.product_id.pricelist_id.name ]]<font color="white"> .........</font></para>
