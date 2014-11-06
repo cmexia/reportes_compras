@@ -164,16 +164,19 @@
     <blockTable colWidths="185.0,182.0,168.0" style="Tableau1">
       <tr>
         <td>
+          <para style="terp_default_Bold_9" >Billing address</para>
+          <para style="terp_default_9">TYP REFRIGERACIÓN SA de CV </para>
+          <para style="terp_default_9">NAYARIT #291 ESQUINA SAN BENITO COLONIA SAN BENITO 44</para>
+          <para style="terp_default_9">HERMOSILLO SONORA 83190 </para>
+          <para style="terp_default_9">MÉXICO</para>
+        </td>
+        <td>
           <para style="terp_default_Bold_9">Shipping address :</para>
           <para style="terp_default_9">LASER AGENCIA ADUANAL</para>
           <para style="terp_default_9">13209 SOUTH UNITEC</para>
 	  <para style="terp_default_9">LAREDO TX, 78045</para>
 	  <para style="terp_default_9">TEL: (956)794-3600 </para>
 	  <para style="terp_default_9">CONTACT: MARTHA MARTINEZ</para>
-        </td>
-          <para style="P2">Shipping address :</para>
-          <para style="P1">[[ (o.dest_address_id and o.dest_address_id.name) or (o.warehouse_id and o.warehouse_id.name) or '']]</para>
-          <para style="P1">[[ (o.dest_address_id and display_address(o.dest_address_id)) or (o.warehouse_id and display_address(o.warehouse_id.partner_id)) or '']]</para>
         </td>
         <td>
           <para style="terp_default_Bold_9">Supplier</para>
