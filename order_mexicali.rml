@@ -187,7 +187,7 @@
           </para>
           <para style="P1">Tel : [[ (o.partner_id.phone) or removeParentNode('para')]]</para>
           <para style="P1">Fax : [[ (o.partner_id.fax) or removeParentNode('para')]]</para>
-          <para style="P1">Rfc : [[ (o.partner_id.vat.replace("MX","").lstrip() or '') or removeParentNode('para')]]</para>
+          <para style="P1">RFC : [[ (o.partner_id.vat.replace("MX","").lstrip() or '') or removeParentNode('para')]]</para>
         </td>
       </tr>
     </blockTable>
