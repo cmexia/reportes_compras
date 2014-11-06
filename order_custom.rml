@@ -101,12 +101,12 @@
     <paraStyle name="P3" fontName="Helvetica" fontSize="10.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" textColor="#404040"/>
     <paraStyle name="P4" fontName="Helvetica" fontSize="10.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0" textColor="#404040"/>
     <paraStyle name="P5" fontName="Helvetica" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
-    <paraStyle name="P6" fontName="Helvetica" fontSize="7.0" leading="9" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P6" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="P7" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="P8" fontName="Helvetica" fontSize="13.0" leading="16" alignment="LEFT"/>
     <paraStyle name="P9" fontName="Helvetica-Bold" fontSize="10.0" leading="13" alignment="LEFT"/>
     <paraStyle name="P10" fontName="Helvetica-Bold" fontSize="12.0" leading="15" alignment="RIGHT" spaceBefore="12.0" spaceAfter="6.0"/>
-    <paraStyle name="P11" fontName="Helvetica-Bold" fontSize="8.0" leading="10" alignment="JUSTIFY" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="P11" fontName="Helvetica-Bold" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
     <paraStyle name="P12" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="P13" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="P14" fontName="Helvetica-Bold" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
@@ -229,7 +229,7 @@
     <para style="terp_default_9">
       <font color="white"> </font>
     </para>
-    <blockTable colWidths="64.0,50.0,178.0,43.0,61.0,44.0,48.0,45.0" repeatRows="1" style="Table_Header_Pur_ord_Line">
+    <blockTable colWidths="64.0,50.0,248.0,43.0,44.0,48.0,45.0" repeatRows="1" style="Table_Header_Pur_ord_Line">
       <tr>
         <td>
           <para style="P14">Date Req.</para>
@@ -244,9 +244,6 @@
           <para style="P14">Qty</para>
         </td>
         <td>
-          <para style="P15">Discount (%)</para>
-        </td>
-        <td>
           <para style="P25">Base price</para>
         </td>
         <td>
@@ -259,25 +256,19 @@
     </blockTable>
     <section>
       <para style="terp_default_8">[[repeatIn(o.order_line,'line')]]</para>
-      <blockTable colWidths="64.0,51.0,178.0,43.0,61.0,44.0,48.0,45.0" style="Table_Order_Pur_line_Content">
+      <blockTable colWidths="64.0,50.0,248.0,43.0,44.0,48.0,45.0" style="Table_Order_Pur_line_Content">
         <tr>
           <td>
             <para style="P18">[[ formatLang( line.date_planned, date=True) ]]</para>
           </td>
           <td>
             <para style="P12">[[ line.product_id.default_code]]</para>
-            <para style="P7">
-              <font color="white"> </font>
-            </para>
           </td>
           <td>
             <para style="P6">[[ line.name ]]</para>
           </td>
           <td>
             <para style="P20">[['%.f' % line.product_qty]] [[ line.product_uom.name ]] </para>
-          </td>
-          <td>
-            <para style="P13">[[ o.pricelist_id.name ]][[ o.product_id.pricelist_id.name ]]<font color="white"> .........</font></para>
           </td>
           <td>
             <para style="P7">[[ line.product_id.standard_price ]] </para>
@@ -287,49 +278,6 @@
           </td>
           <td>
             <para style="P20">[[ formatLang(line.price_subtotal, digits=get_digits(dp='Account') ) ]] </para>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <para style="terp_default_8_Italic"/>
-            <para style="terp_default_8_Italic">
-              <font color="white"> </font>
-            </para>
-          </td>
-          <td>
-            <para style="terp_default_9">
-              <font color="white"> </font>
-            </para>
-          </td>
-          <td>
-            <para style="terp_default_Centre_9">
-              <font color="white"> </font>
-            </para>
-          </td>
-          <td>
-            <para style="terp_default_Right_9">
-              <font color="white"> </font>
-            </para>
-          </td>
-          <td>
-            <para style="terp_default_Right_9">
-              <font color="white"> </font>
-            </para>
-          </td>
-          <td>
-            <para style="terp_default_Right_9">
-              <font color="white"> </font>
-            </para>
-          </td>
-          <td>
-            <para style="terp_default_Right_9">
-              <font color="white"> </font>
-            </para>
-          </td>
-          <td>
-            <para style="terp_default_Right_9">
-              <font color="white"> </font>
-            </para>
           </td>
         </tr>
       </blockTable>
@@ -389,4 +337,3 @@
     <para style="terp_default_9"/>
   </story>
 </document>
-
