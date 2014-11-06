@@ -164,16 +164,12 @@
     <blockTable colWidths="185.0,182.0,168.0" style="Tableau1">
       <tr>
         <td>
-          <para style="P9">Billing address</para>
-          <para style="P8">
-            <font color="white"> </font>
-          </para>
-          <para style="P4">[[ o.company_id.vat ]]</para>
-          <para style="P4">[[ o.company_id.name ]]</para>
-          <para style="P4">[[ o.company_id.street ]]</para>
-          <para style="P4">[[ o.company_id.city ]] </para>
-          <para style="P3">[[ o.company_id.country_id.name ]]</para>
-        </td>
+          <para style="terp_default_Bold_9" >Billing address</para>
+          <para style="terp_default_9">TYP REFRIGERACIÓN SA de CV </para>
+          <para style="terp_default_9">NAYARIT #291 ESQUINA SAN BENITO COLONIA SAN BENITO 44</para>
+          <para style="terp_default_9">HERMOSILLO SONORA 83190 </para>
+          <para style="terp_default_9">MÉXICO</para>
+          </td>
         <td>
           <para style="P2">Shipping address :</para>
           <para style="P1">[[ (o.dest_address_id and o.dest_address_id.name) or (o.warehouse_id and o.warehouse_id.name) or '']]</para>
@@ -188,7 +184,7 @@
           </para>
           <para style="P1">Tel : [[ (o.partner_id.phone) or removeParentNode('para')]]</para>
           <para style="P1">Fax : [[ (o.partner_id.fax) or removeParentNode('para')]]</para>
-          <para style="P1">TIN : [[ (o.partner_id.vat) or removeParentNode('para')]]</para>
+          <para style="P1">Rfc : [[ (o.partner_id.vat.replace("MX","").lstrip() or '') or removeParentNode('para')]]</para>
         </td>
       </tr>
     </blockTable>
