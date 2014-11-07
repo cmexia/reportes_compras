@@ -232,7 +232,7 @@
     <para style="terp_default_9">
       <font color="white"> </font>
     </para>
-    <blockTable colWidths="64.0,50.0,248.0,43.0,44.0,48.0,45.0" repeatRows="1" style="Table_Header_Pur_ord_Line">
+    <blockTable colWidths="64.0,98.0,248.0,43.0,48.0,45.0" repeatRows="1" style="Table_Header_Pur_ord_Line">
       <tr>
         <td>
           <para style="P14">Date Req.</para>
@@ -247,9 +247,6 @@
           <para style="P14">Qty</para>
         </td>
         <td>
-          <para style="P25">Base price</para>
-        </td>
-        <td>
           <para style="P17">Unit Price</para>
         </td>
         <td>
@@ -259,7 +256,7 @@
     </blockTable>
     <section>
       <para style="terp_default_8">[[repeatIn(o.order_line,'line')]]</para>
-      <blockTable colWidths="64.0,50.0,248.0,43.0,44.0,48.0,45.0" style="Table_Order_Pur_line_Content">
+      <blockTable colWidths="64.0,98.0,248.0,43.0,48.0,45.0" style="Table_Order_Pur_line_Content">
         <tr>
           <td>
             <para style="P18">[[ formatLang( line.date_planned, date=True) ]]</para>
@@ -272,9 +269,6 @@
           </td>
           <td>
             <para style="P20">[['%.f' % line.product_qty]] [[ line.product_uom.name ]] </para>
-          </td>
-          <td>
-            <para style="P7">[[ line.product_id.standard_price ]] </para>
           </td>
           <td>
             <para style="P20">[[ formatLang(line.price_unit, digits=get_digits(dp='Account') ) ]]</para>
