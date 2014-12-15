@@ -3,6 +3,10 @@
   <template pageSize="(595.0,842.0)" title="Test" author="Martin Simon" allowSplitting="20">
     <pageTemplate id="first">
       <frame id="first" x1="18.0" y1="42.0" width="535" height="758"/>
+      <pageGraphics>
+ 	<rotate degrees="90"/> <fill color="grey"/> <drawString x="2.65cm" y="-0.4cm">www.typrefrigeracion.com.mx</drawString> <fill color="black"/> <rotate degrees="-90"/>
+	<lines>1.2cm 2.65cm 19.9cm 2.65cm</lines> <place x="1.3cm" y="0cm" height="2.55cm" width="19.0cm"> <para style="main_footer">[[ company.rml_footer ]]</para> <para style="main_footer">Contacto : 			[[ user.name ]] | Email : [[ user.email ]] - Pagina: <pageNumber/></para> </place>
+	 </pageGraphics>
     </pageTemplate>
   </template>
   <stylesheet>
@@ -114,9 +118,9 @@
     <paraStyle name="P16" fontName="Helvetica-Bold" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
     <paraStyle name="P17" fontName="Helvetica-Bold" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
     <paraStyle name="P18" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
-    <paraStyle name="P19" fontName="Helvetica" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P19" fontName="Helvetica" fontSize="8.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="P20" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
-    <paraStyle name="P21" fontName="Helvetica-Bold" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P21" fontName="Helvetica-Bold" fontSize="8.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="P22" fontName="Helvetica-Bold" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
     <paraStyle name="P23" fontName="Helvetica-Oblique" fontSize="12.0" leading="15" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="P24" fontName="Helvetica-Oblique" fontSize="12.0" leading="15" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
@@ -182,12 +186,9 @@
           <para style="terp_default_Bold_9">Supplier</para>
           <para style="terp_default_9">[[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]] </para>
           <para style="terp_default_9">[[ o.partner_id and display_address(o.partner_id) ]] </para>
-          <para style="terp_default_9">
-            <font color="white"> </font>
-          </para>
           <para style="P1">Tel : [[ (o.partner_id.phone) or removeParentNode('para')]]</para>
           <para style="P1">Fax : [[ (o.partner_id.fax) or removeParentNode('para')]]</para>
-          <para style="P1">TIN : [[ (o.partner_id.vat.replace("US","").lstrip() or '') or removeParentNode('para')]]</para>
+          <para style="P1">Tax ID : [[ (o.partner_id.vat.replace("US","").lstrip() or '') or removeParentNode('para')]]</para>
         </td>
       </tr>
     </blockTable>
@@ -279,7 +280,7 @@
         </tr>
       </blockTable>
     </section>
-    <blockTable colWidths="398.0,66.0,69.0" style="Table_All_Total_Detail">
+    <blockTable colWidths="398.0,75.0,80.0" style="Table_All_Total_Detail">
       <tr>
         <td>
           <para style="terp_default_9">
@@ -300,7 +301,7 @@
           </para>
         </td>
         <td>
-          <para style="P5">Taxes :</para>
+          <para style="terp_default_9">Taxes :</para>
         </td>
         <td>
           <para style="P19">[[ o.pricelist_id.currency_id. symbol ]][[ formatLang(o.amount_tax, digits=get_digits(dp='Account')) ]]</para>
@@ -331,6 +332,5 @@
         </td>
       </tr>
     </blockTable>
-    <para style="terp_default_9"/>
   </story>
 </document>
