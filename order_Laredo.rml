@@ -188,7 +188,7 @@
           <para style="terp_default_9">[[ o.partner_id and display_address(o.partner_id) ]] </para>
           <para style="P1">Tel : [[ (o.partner_id.phone) or removeParentNode('para')]]</para>
           <para style="P1">Fax : [[ (o.partner_id.fax) or removeParentNode('para')]]</para>
-          <para style="P1">TIN : [[ (o.partner_id.vat.replace("US","").lstrip() or '') or removeParentNode('para')]]</para>
+          <para style="P1">Tax ID : [[ (o.partner_id.vat.replace("US","").lstrip() or '') or removeParentNode('para')]]</para>
         </td>
       </tr>
     </blockTable>
