@@ -164,7 +164,7 @@
   <story>
     <para style="terp_default_8">[[repeatIn(objects,'o')]]</para>
     <para style="terp_default_8">[[ setLang(o.partner_id.lang) ]]</para>
-    <para style="P10">[[ o.state=='draft' and removeParentNode('para') ]] Purchase Order Confirmation N°[[ o.name ]]</para>
+    <para style="P10">[[ o.state=='draft' and removeParentNode('para') ]] Purchase Order N° [[ o.name ]]</para>
     <para style="P10">[[ o.state&lt;&gt;'draft' and removeParentNode('para') ]] Request for Quotation N° [[ o.name ]]</para>
     <blockTable colWidths="185.0,182.0,168.0" style="Tableau1">
       <tr>
