@@ -184,9 +184,6 @@
           <para style="terp_default_Bold_9">Supplier</para>
           <para style="terp_default_9">[[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]] </para>
           <para style="terp_default_9">[[ o.partner_id and display_address(o.partner_id) ]] </para>
-          <para style="terp_default_9">
-            <font color="white"> </font>
-          </para>
           <para style="P1">Tel : [[ (o.partner_id.phone) or removeParentNode('para')]]</para>
           <para style="P1">Fax : [[ (o.partner_id.fax) or removeParentNode('para')]]</para>
           <para style="P1">RFC : [[ (o.partner_id.vat.replace("MX","").lstrip() or '') or removeParentNode('para')]]</para>
