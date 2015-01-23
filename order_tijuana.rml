@@ -11,7 +11,7 @@
 		<para style="header">TyP Refrigeracion SA. de C.V</para>
 	</place>
  	<rotate degrees="90"/> <fill color="grey"/><drawString x="2.65cm" y="-0.4cm">www.typrefrigeracion.com.mx</drawString> <fill color="black"/> <rotate degrees="-90"/>
-	<lines>1.3cm 1.65cm 20cm 1.65cm</lines><place x="1.3cm" y="-0.5cm" height="2.55cm" width="19.0cm"> <para style="main_footer">| Purchase Manager : Carlos Noe Martinez cmartinez@typrefrigeracion.com.mx | Phone : [[ company.partner_id.phone or '' ]] |</para>
+	<lines>1.3cm 1.0cm 20cm 1.0m</lines><place x="1.3cm" y="-1.2cm" height="2.55cm" width="19.0cm"> <para style="main_footer">| Purchase Manager : Carlos Noe Martinez cmartinez@typrefrigeracion.com.mx | Phone : [[ company.partner_id.phone or '' ]] |</para>
 	<para style="main_footer"></para> <para style="main_footer">Contact : [[ user.name ]] | Email : [[ user.email ]]- Pagina: <pageNumber/></para> </place>	
 	</pageGraphics>
     </pageTemplate>
