@@ -4,8 +4,15 @@
     <pageTemplate id="first">
       <frame id="first" x1="18.0" y1="42.0" width="535" height="758"/>
       <pageGraphics>
- 	<rotate degrees="90"/> <fill color="grey"/> <drawString x="2.65cm" y="-0.4cm">www.typrefrigeracion.com.mx</drawString> <fill color="black"/> <rotate degrees="-90"/>
-	<lines>1.2cm 2.65cm 19.9cm 2.65cm</lines> <place x="1.3cm" y="0cm" height="2.55cm" width="19.0cm"> <para style="main_footer">[[ company.rml_footer ]]</para> <para style="main_footer">Contacto : 			[[ user.name ]] | Email : [[ user.email ]] - Pagina: <pageNumber/></para> </place>
+	<image x="1.3cm" y="28.0cm" height="40.0" >[[ company.logo or removeParentNode('image') ]]</image>
+	<fill color="black"/> <stroke color="black"/>
+	<lines>1.3cm 28.0cm 20cm 28.0cm</lines>
+	<place x="1.3cm" y="26cm" height="2.55cm" width="19.0cm">
+		<para style="header">TyP Refrigeracion SA. de C.V</para>
+	</place>
+ 	<rotate degrees="90"/> <fill color="grey"/><drawString x="2.65cm" y="-0.4cm">www.typrefrigeracion.com.mx</drawString> <fill color="black"/> <rotate degrees="-90"/>
+	<lines>1.3cm 1.65cm 20cm 1.65cm</lines><place x="1.3cm" y="-0.5cm" height="2.55cm" width="19.0cm"> <para style="main_footer">| Purchase Manager : Carlos Noe Martinez cmartinez@typrefrigeracion.com.mx | Phone : [[ company.partner_id.phone or '' ]] |</para>
+	<para style="main_footer"></para> <para style="main_footer">Contact : [[ user.name ]] | Email : [[ user.email ]]- Pagina: <pageNumber/></para> </place>	
 	</pageGraphics>
     </pageTemplate>
   </template>
@@ -124,8 +131,7 @@
     <paraStyle name="P22" fontName="Helvetica-Bold" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
     <paraStyle name="P23" fontName="Helvetica-Oblique" fontSize="12.0" leading="15" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="P24" fontName="Helvetica-Oblique" fontSize="12.0" leading="15" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
-    <paraStyle name="P25" fontName="Helvetica-Bold" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
-    <paraStyle name="P26" fontName="Helvetica-Bold" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="header" fontName="Helvetica-Bold" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
     <paraStyle name="Standard" fontName="Helvetica"/>
     <paraStyle name="Text body" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
     <paraStyle name="Heading" fontName="Helvetica" fontSize="14.0" leading="17" spaceBefore="12.0" spaceAfter="6.0"/>
@@ -289,7 +295,7 @@
           </para>
         </td>
         <td>
-          <para style="terp_default_9">Net Total :</para>
+          <para style="terp_default_9">Sub Total :</para>
         </td>
         <td>
           <para style="P19">[[ o.pricelist_id.currency_id. symbol ]][[ formatLang(o.amount_untaxed, digits=get_digits(dp='Account') ) ]]</para>
