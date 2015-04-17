@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <document filename="test.pdf">
   <template pageSize="(595.0,842.0)" title="Test" author="Martin Simon" allowSplitting="20">
-    <pageTemplate id="first">
+   <pageTemplate id="first">
       <frame id="first" x1="18.0" y1="42.0" width="535" height="758"/>
-      <pageGraphics>
+	<pageGraphics>
 	<image x="1.3cm" y="28.0cm" height="40.0" >[[ company.logo or removeParentNode('image') ]]</image>
 	<fill color="black"/> <stroke color="black"/>
 	<lines>1.3cm 28.0cm 20cm 28.0cm</lines>
@@ -11,8 +11,8 @@
 		<para style="header">TyP Refrigeracion SA. de C.V</para>
 	</place>
  	<rotate degrees="90"/> <fill color="grey"/><drawString x="2.65cm" y="-0.4cm">www.typrefrigeracion.com.mx</drawString> <fill color="black"/> <rotate degrees="-90"/>
-	<lines>1.3cm 1.0cm 20cm 1.0m</lines><place x="1.3cm" y="-1.2cm" height="2.55cm" width="19.0cm"> <para style="main_footer">| Purchase Manager : Carlos Noe Martinez cmartinez@typrefrigeracion.com.mx | Phone : [[ company.partner_id.phone or '' ]] |</para>
-	<para style="main_footer"></para> <para style="main_footer">Contact : [[ user.name ]] | Email : [[ user.email ]]- Pagina: <pageNumber/></para> </place>	
+	<lines>1.3cm 1.0cm 20cm 1.0cm</lines><place x="1.3cm" y="-1.2cm" height="2.55cm" width="19.0cm"> <para style="main_footer">| Gerente Compras : Carlos Noe Martinez cmartinez@typrefrigeracion.com.mx | Tel : [[ company.partner_id.phone or '' ]] |</para>
+	<para style="main_footer"></para> <para style="main_footer">Contacto : [[ user.name ]] | Email : [[ user.email ]]- Pagina: <pageNumber/></para> </place>	
 	</pageGraphics>
     </pageTemplate>
   </template>
@@ -127,11 +127,11 @@
     <paraStyle name="P18" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="P19" fontName="Helvetica" fontSize="8.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="P20" fontName="Helvetica" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
-    <paraStyle name="P21" fontName="Helvetica-Bold" fontSize="8.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="P21" fontName="Helvetica-Bold" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="P22" fontName="Helvetica-Bold" fontSize="7.0" leading="9" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
     <paraStyle name="P23" fontName="Helvetica-Oblique" fontSize="12.0" leading="15" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="P24" fontName="Helvetica-Oblique" fontSize="12.0" leading="15" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
-    <paraStyle name="header" fontName="Helvetica-Bold" fontSize="10" leading="10" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="header" fontName="Helvetica-Bold" fontSize="10.0" leading="10" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
     <paraStyle name="Standard" fontName="Helvetica"/>
     <paraStyle name="Text body" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
     <paraStyle name="Heading" fontName="Helvetica" fontSize="14.0" leading="17" spaceBefore="12.0" spaceAfter="6.0"/>
@@ -170,8 +170,8 @@
   <story>
     <para style="terp_default_8">[[repeatIn(objects,'o')]]</para>
     <para style="terp_default_8">[[ setLang(o.partner_id.lang) ]]</para>
-    <para style="P10">[[ o.state=='draft' and removeParentNode('para') ]] Purchase Order N° [[ o.name ]]</para>
-    <para style="P10">[[ o.state&lt;&gt;'draft' and removeParentNode('para') ]] Purchase Order N° [[ o.name ]]</para>
+    <para style="P10">[[ o.state=='draft' and removeParentNode('para') ]] Pedido de  N° [[ o.name ]]</para>
+    <para style="P10">[[ o.state&lt;&gt;'draft' and removeParentNode('para') ]] Request for Quotation N° [[ o.name ]]</para>
     <blockTable colWidths="185.0,182.0,168.0" style="Tableau1">
       <tr>
         <td>
@@ -181,13 +181,10 @@
           <para style="terp_default_9">HERMOSILLO SONORA 83190 </para>
           <para style="terp_default_9">MÉXICO</para>
           </td>
-       <td>
-          <para style="terp_default_Bold_9">Shipping address :</para>
-          <para style="terp_default_9">AGENCIA ADUANAL EXPORT DYNAMICS</para>
-          <para style="terp_default_9">6700 GATEWAY PARK DRIVE SUITE 5</para>
-	  <para style="terp_default_9">SAN DIEGO, CA 92154</para>
-	  <para style="terp_default_9">TEL: (664)647-5010 </para>
-	  <para style="terp_default_9">CONTACT: GERARDO FLORES</para>
+        <td>
+          <para style="P2">Shipping address :</para>
+          <para style="P1">[[ (o.dest_address_id and o.dest_address_id.name) or (o.warehouse_id and o.warehouse_id.name) or '']]</para>
+          <para style="P1">[[ (o.dest_address_id and display_address(o.dest_address_id)) or (o.warehouse_id and display_address(o.warehouse_id.partner_id)) or '']]</para>
         </td>
         <td>
           <para style="terp_default_Bold_9">Supplier</para>
@@ -195,7 +192,7 @@
           <para style="terp_default_9">[[ o.partner_id and display_address(o.partner_id) ]] </para>
           <para style="P1">Tel : [[ (o.partner_id.phone) or removeParentNode('para')]]</para>
           <para style="P1">Fax : [[ (o.partner_id.fax) or removeParentNode('para')]]</para>
-          <para style="P1">Tax ID : [[ (o.partner_id.vat.replace("US","").lstrip() or '') or removeParentNode('para')]]</para>
+          <para style="P1">RFC : [[ (o.partner_id.vat.replace("MX","").lstrip() or '') or removeParentNode('para')]]</para>
         </td>
       </tr>
     </blockTable>
@@ -290,9 +287,7 @@
     <blockTable colWidths="398.0,75.0,80.0" style="Table_All_Total_Detail">
       <tr>
         <td>
-          <para style="terp_default_9">
-            <font color="white"> </font>
-          </para>
+          <para style="terp_default_9"><font color="white"></font></para>
         </td>
         <td>
           <para style="terp_default_9">Sub Total :</para>
