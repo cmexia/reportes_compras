@@ -221,7 +221,7 @@
         </td>
       </tr>
     </blockTable>
-    <blockTable colWidths="136.0,132.0,133.0,133.0" style="Content_Order_Reference_Table">
+    <blockTable colWidths="136.0,132.0,65.0,65.0,133.0" style="Content_Order_Reference_Table">
       <tr>
         <td>
           <para style="terp_default_Centre_8">[[ o.name or '' ]]</para>
