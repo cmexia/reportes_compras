@@ -202,7 +202,7 @@
     <para style="terp_default_8">
       <font color="white"> </font>
     </para>
-    <blockTable colWidths="136.0,132.0,65.0,65.0,133.0, " style="Header_Order_Reference_Tbl">
+    <blockTable colWidths="136.0,132.0,133.0,133.0" style="Header_Order_Reference_Tbl">
       <tr>
         <td>
           <para style="terp_tblheader_General_Centre">Our Order Reference</para>
@@ -214,14 +214,11 @@
           <para style="terp_tblheader_General_Centre">Order Date</para>
         </td>
         <td>
-          <para style="terp_tblheader_Details_Centre">Create_date</para>
-        </td>
-        <td>
           <para style="terp_tblheader_General_Centre">Validated By</para>
         </td>
       </tr>
     </blockTable>
-    <blockTable colWidths="136.0,132.0,65.0,65.0,133.0" style="Content_Order_Reference_Table">
+    <blockTable colWidths="136.0,132.0,133.0,133.0" style="Content_Order_Reference_Table">
       <tr>
         <td>
           <para style="terp_default_Centre_8">[[ o.name or '' ]]</para>
@@ -231,9 +228,6 @@
         </td>
         <td>
           <para style="terp_default_Centre_8">[[formatLang(o.date_order,date=True) ]]</para>
-        </td>
-        <td>
-          <para style="terp_default_Centre_8">[[formatLang(o.create_date,date=True) ]]</para>
         </td>
         <td>
           <para style="terp_default_Centre_8">[[ (o.validator and o.validator.name) or '' ]]</para>
