@@ -214,7 +214,7 @@
           <para style="terp_tblheader_General_Centre">Currency</para>
         </td>
         <td>
-          <para style="terp_tblheader_General_Centre">Order Date</para>
+          <para style="terp_tblheader_General_Centre">Fecha Elaboración</para>
         </td>
         <td>
           <para style="terp_tblheader_General_Centre">Validated By</para>
@@ -230,7 +230,7 @@
           <para style="terp_default_Centre_8">[[ o.pricelist_id.currency_id.name or '']]</para>
         </td>
         <td>
-          <para style="terp_default_Centre_8">[[formatLang(o.date_order,date=True) ]]</para>
+          <para style="terp_default_Centre_8">[[formatLang(o.create_date,date=True) ]]</para>
         </td>
         <td>
           <para style="terp_default_Centre_8">[[ (o.validator and o.validator.name) or '' ]]</para>
